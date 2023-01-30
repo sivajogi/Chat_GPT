@@ -77574,9 +77574,9 @@ if(k==null)k=""
 A.qv().$1(k+" data-4")
 i=A.lm("https://api.openai.com/v1/completions",0,null)
 h=t.N
-g=A.aE(["Authorization","Bearer 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","Content-Type","application/json","Accept","application/json"],h,h)
+g=A.aE(["Authorization","Bearer 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","Content-Type","application/json","Accept","application/json"],h,h)
 s=12
-return A.a1(A.aOF(i,B.ao.OA(A.aE(["model","davinci:ft-personal-2023-01-20-20-02-43","prompt",k,"max_tokens",20,"stop",A.a(["Q:","##"],t.s),"temperature",0.8],h,t.K),null),g),$async$fZ)
+return A.a1(A.aOF(i,B.ao.OA(A.aE(["model","davinci:ft-personal-2023-01-21-16-00-10","prompt",k,"max_tokens",200,"stop",A.a(["Q","##"],t.s),"temperature",0.8],h,t.K),null),g),$async$fZ)
 case 12:f=a2
 s=f.b===200?13:14
 break
