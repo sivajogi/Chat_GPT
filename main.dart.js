@@ -77576,7 +77576,7 @@ if(k==null)k=""
 A.qv().$1(k+" data-4")
 i=A.ln("https://api.openai.com/v1/completions",0,null)
 h=t.N
-g=A.aE(["Authorization","Bearer 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","Content-Type","application/json","Accept","application/json"],h,h)
+g=A.aE(["Authorization","Bearer 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","Content-Type","application/json","Accept","application/json"],h,h)
 s=12
 return A.a1(A.aOF(i,B.ao.OA(A.aE(["model","davinci:ft-personal-2023-01-21-16-00-10","prompt",k,"max_tokens",200,"stop",A.a(["Q","##"],t.s),"temperature",0.8],h,t.K),null),g),$async$fZ)
 case 12:f=a3
