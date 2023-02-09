@@ -3,31 +3,33 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.bin": "3eb555e93af1fda4234105e8df09a300",
-"assets/AssetManifest.json": "ef2ddd175f16532eec06f82d336c428e",
+  "app.js": "8c6fbfa659229ae3e382b359f77c53da",
+"assets/AssetManifest.json": "930ac0154d790f416a4051fcbbde20f0",
 "assets/assets/chatbot.png": "c369a813154006733899f31bc2a9922e",
-"assets/assets/hand.svg": "126c63fc8c0e0d8af7a0e2daee29b227",
+"assets/assets/hand.svg": "399f93b75c4a00b044d3c3f0c5aa7bbf",
 "assets/assets/robotics.png": "ca7e0bf13e12e95f88faff1ceb11af2b",
-"assets/assets/send.svg": "4c5341d0d26160f3437d0b3a98f0ff21",
+"assets/assets/send.svg": "8888f9cb0e77d771ebac44a774f00ce2",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "fd503a1744b1994c0bf48ea9612f7410",
-"assets/NOTICES": "1489df0908f4fd735a76979bce4ece8f",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "57d849d738900cfd590e9adc7e208250",
+"assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
+"assets/NOTICES": "eba920cc22696721f686969691c60b39",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/fluttertoast/assets/toastify.css": "a85675050054f179444bc5ad70ffc635",
 "assets/packages/fluttertoast/assets/toastify.js": "e7006a0a033d834ef9414d48db3be6fc",
-"assets/shaders/ink_sparkle.frag": "92666cc97576adbea2e2d3061a953137",
-"canvaskit/canvaskit.js": "971260b2fcb9a1c3b5fd69fb698cf9ba",
-"canvaskit/canvaskit.wasm": "48f080c2ac49c3cb46d3bede112db925",
+"canvaskit/canvaskit.js": "97937cb4c2c2073c968525a3e08c86a3",
+"canvaskit/canvaskit.wasm": "3de12d898ec208a5f31362cc00f09b9e",
+"canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
+"canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"flutter.js": "a85fcf6324d3c4d3ae3be1ae4931e9c5",
+"flutter.js": "1cfe996e845b3a8a33f57607e8b09ee4",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "021a953e83df0c77bab35a3156810bae",
-"/": "021a953e83df0c77bab35a3156810bae",
-"main.dart.js": "38a831348cc18788df91c4d358265a0f",
-"manifest.json": "8f303e9ff99e3d6056d2b85423690df9",
+"index.html": "56e0e7f199ae8d6fddb68f9d16f9c78d",
+"/": "56e0e7f199ae8d6fddb68f9d16f9c78d",
+"main.dart.js": "f5986cd5fe2cfa856d7a27f9bb180210",
+"manifest.json": "c9c6e178b1a37f4ddb356807fa7235ed",
+"package.json": "5ead27e6813c359c2b7bfc9f24b32d5b",
 "version.json": "6a77c65d6a39f21184ab3e2a296f51f6"
 };
 
@@ -70,8 +72,6 @@ self.addEventListener("activate", function(event) {
         await caches.delete(TEMP);
         // Save the manifest to make future upgrades efficient.
         await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
-        // Claim client to enable caching on first launch
-        self.clients.claim();
         return;
       }
       var oldManifest = await manifest.json();
@@ -97,8 +97,6 @@ self.addEventListener("activate", function(event) {
       await caches.delete(TEMP);
       // Save the manifest to make future upgrades efficient.
       await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
-      // Claim client to enable caching on first launch
-      self.clients.claim();
       return;
     } catch (err) {
       // On an unhandled exception the state of the cache cannot be guaranteed.
